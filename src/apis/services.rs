@@ -12,6 +12,7 @@ pub async fn echo(req_body: String) -> impl Responder {
 
 #[post("/long-post")]
 pub async fn long_post(req_body: String) -> impl Responder {
+    // let tokio handle blocking requests so the thread isn't locked
     tokio::time::sleep(std::time::Duration::from_secs(3)).await;
     HttpResponse::Ok().body(req_body)
 }
