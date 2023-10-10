@@ -10,7 +10,7 @@ pub fn route_config(cfg: &mut web::ServiceConfig) {
     );
 }
 
-// tls builder with nopass private key
+// tsl builder with nopass private key
 pub fn ssl_config() -> SslAcceptorBuilder {
     let mut ssl_builder = SslAcceptor::
         mozilla_intermediate(SslMethod::tls_server())
